@@ -4,6 +4,8 @@ pipeline {
     environment {
         // Define DockerHub credentials
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-rodrigo1230207')
+        REPOSITORY = 'rodrigo1230207/arqsoft' // Replace with your actual repository
+
     }
 
     stages {
