@@ -21,7 +21,7 @@ pipeline {
                     ]
 
                     // Login to DockerHub
-				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                    bat 'echo %DOCKERHUB_CREDENTIALS_PSW% | docker login -u %DOCKERHUB_CREDENTIALS_USR% --password-stdin'
 
                     // Iterate over each service, build and push
                     for (service in services) {
