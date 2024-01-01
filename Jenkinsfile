@@ -38,14 +38,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            // Logout from DockerHub
-            sh "docker logout ${REGISTRY}"
-
-            // Optionally clean up after build
-            sh "docker system prune -af"
-        }
-    }
 }
