@@ -17,9 +17,9 @@ pipeline {
                         'Product_command_microservice',
                         'Products_query_microservice',
                         'Review_command_microservice',
-                        'Review_query_microservice',
-                        'votes_command',
-                        'votes_query'
+                        'Review_query_microservice'
+                        // 'votes_command',
+                        // 'votes_query'
                     ]
 
                     // Login to DockerHub
