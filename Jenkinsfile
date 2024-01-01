@@ -9,6 +9,12 @@ pipeline {
     }
 
     stages {
+        stage('Build') {
+            steps {
+                bat 'mvn clean package'
+            }
+        }
+
         stage('Build and Push Images') {
             steps {
                 script {
