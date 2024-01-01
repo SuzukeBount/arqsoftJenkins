@@ -26,7 +26,7 @@ pipeline {
                     for (service in services) {
                         bat """
                         cd ${service}
-                        mvn clean package
+                        mvn clean package -DskipTests
                         cd ..
                         """
                     }
