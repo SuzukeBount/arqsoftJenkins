@@ -30,7 +30,7 @@ pipeline {
 
                         def image = "${REPOSITORY}/${service.toLowerCase()}:latest"
                         // Build the Docker image using Windows batch command
-                        bat "docker build -t ${image} ${service}"
+                        bat "docker build -t ${REPOSITORY}${service} ${service}"
                         // Push the image to Docker Hub
                         bat "docker push ${image}"
                     }
