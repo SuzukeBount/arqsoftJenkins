@@ -11,9 +11,29 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean package'
+                script {
+                    // List of microservice directories
+                    def services = [
+                        'Product_command_microservice',
+                        'Products_query_microservice',
+                        'Review_command_microservice',
+                        'Review_query_microservice'
+                        // 'votes_command',
+                        // 'votes_query'
+                    ]
+
+                    // Iterate over each service and build with Maven
+                    for (service in services) {
+                        bat """
+                        cd ${service}
+                        mvn clean package
+                        cd ..
+                        """
+                    }
+                }
             }
         }
+
 
         stage('Build and Push Images') {
             steps {
