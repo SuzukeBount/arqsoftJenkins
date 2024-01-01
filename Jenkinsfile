@@ -14,12 +14,12 @@ pipeline {
                 script {
                     // Assuming you have a list of directories for microservices
                     def services = [
-                        'Product_command_microservice',
-                        'Products_query_microservice',
-                        'Review_command_microservice',
-                        'Review_query_microservice',
-                        'votes_command',
-                        'votes_query'
+                        'Product_command_microservice/Dockerfile',
+                        'Products_query_microservice/Dockerfile',
+                        'Review_command_microservice/Dockerfile',
+                        'Review_query_microservice/Dockerfile',
+                        'votes_command/Dockerfile',
+                        'votes_query/Dockerfile'
                     ]
 
                     // Login to DockerHub
